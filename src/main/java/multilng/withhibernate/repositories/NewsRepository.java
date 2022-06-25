@@ -11,6 +11,6 @@ import java.util.List;
 @Transactional
 public interface NewsRepository extends JpaRepository<News, Long> {
 
-    List<News> findNewsByPublication_id(Long id);
+    //List<News> findNewsByPublication_id(Long id);
 
 }

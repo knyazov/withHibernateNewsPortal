@@ -40,4 +40,6 @@ public class News {
     @Column(name = "publication_id")
     private Long publication_id;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Publications publications;
 }

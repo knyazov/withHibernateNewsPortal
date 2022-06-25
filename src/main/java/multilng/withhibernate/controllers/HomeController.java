@@ -17,16 +17,17 @@ public class HomeController {
     @Autowired
     private NewsService newsService;
 
-    @GetMapping(value = "/{p_id}")
-    private String indexPage(Model model,
-                             @PathVariable Long p_id) {
-        if (p_id != null) {
-            model.addAttribute("allPublications", publicationsService.getAllPublications());
-            model.addAttribute("newsByPublications", newsService.getNewsByPublication(p_id));
-        } else {
-            model.addAttribute("allPublications", publicationsService.getAllPublications());
-            model.addAttribute("allNews", newsService.getAllNews());
-        }
+    @GetMapping(value = "/")
+    private String indexPage(Model model) {
+        model.addAttribute("allPublications", publicationsService.getAllPublications());
+        model.addAttribute("allNews", newsService.getAllNews());
         return "index";
+    }
+
+    @GetMapping(value = "/{id}")
+    private String publicationsPage(@PathVariable Long id,
+                                    Model model){
+        model.addAttribute("getNewsByPub", newsService.getNewsByPublication(id));
+        return "redirect:/";
     }
 }
