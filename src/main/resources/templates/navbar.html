@@ -29,15 +29,15 @@
 <hr>
 
 <nav class="navbar navbar-expand-sm bg-success navbar-dark">
-    <div class="container-fluid">
-        <ul class="navbar-nav">
+    <div class="container-fluid ">
+        <ul class="navbar-nav mx-auto">
             <li class="nav-item">
                 <a class="nav-link active" href="">
                     ALL NEWS
                 </a>
             </li>
             <li class="nav-item" th:each = "publication : ${allPublications}">
-                <a class="nav-link active" href="" th:text = "${publication.name}">
+                <a class="nav-link active" th:href="@{'/'+${publication.name}}" th:text = "${publication.name}">
                 </a>
             </li>
         </ul>

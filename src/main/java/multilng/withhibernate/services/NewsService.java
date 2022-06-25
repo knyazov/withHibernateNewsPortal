@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface NewsService {
     News addNews(News news);
     List<News> getAllNews();

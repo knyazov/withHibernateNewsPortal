@@ -4,9 +4,11 @@ import multilng.withhibernate.entities.News;
 import multilng.withhibernate.repositories.NewsRepository;
 import multilng.withhibernate.services.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class NewsImpl implements NewsService {
 
     @Autowired
