@@ -3,7 +3,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/layout/main.html">
 <div layout:fragment="productsContent">
     <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col" th:each="news : ${allNews}">
+        <div class="col" th:each="news : ${getNewsByPub}">
             <div class="card">
                 <img th:src="${news.picture_url}" class="card-img-top" alt="...">
                 <div class="card-body">

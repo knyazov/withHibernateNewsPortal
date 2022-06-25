@@ -28,6 +28,6 @@ public class HomeController {
     private String publicationsPage(@PathVariable Long id,
                                     Model model){
         model.addAttribute("getNewsByPub", newsService.getNewsByPublication(id));
-        return "redirect:/";
+        return "newsByPublication";
     }
 }
