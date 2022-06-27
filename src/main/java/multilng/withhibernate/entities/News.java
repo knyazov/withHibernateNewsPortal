@@ -42,4 +42,6 @@ public class News {
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Publications publications;
+
+
 }

@@ -1,0 +1,60 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layout/main.html">
+<div layout:fragment="productsContent">
+    <div class="row mt-3">
+        <div class="col-6 mx-auto">
+            <form th:action="@{'/addNews'}" method="post">
+                <div class="row">
+                    <div class="col-12">
+                        <label>TITLE : </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" class="form-control" name="title">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label>SHORT CONTENT : </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" class="form-control" name="short_content">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label>content : </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <textarea name="content"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label>PICTURE URL : </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" class="form-control" name="picture_url">
+                    </div>
+                </div>
+                <div class="row">
+                        <label>PUBLICATION SOURCE: </label>
+                    <select name="publication_id" class="form-control">
+                        <option th:each="pub : ${publications}" th:text="${pub.name}" th:value="${pub.id}"></option>
+                    </select>
+                </div>
+                <button class="btn btn-success">ADD NEWS</button>
+            </form>
+        </div>
+    </div>
+</div>
+</html>

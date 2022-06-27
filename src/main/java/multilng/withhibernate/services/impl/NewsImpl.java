@@ -51,7 +51,7 @@ public class NewsImpl implements NewsService {
     }
 
     @Override
-    public List<Publications> getNewsByPublication(Long id) {
+    public List<Publications> getAllPublications() {
         return publicationsRepository.findAll();
     }
 

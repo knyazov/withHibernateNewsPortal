@@ -14,9 +14,8 @@ public interface NewsService {
     News saveNews(News news);
     boolean isExist(Long id);
 
-    List<Publications> getNewsByPublication(Long id);
+    List<Publications> getAllPublications();
     Publications addPublication(Publications publication);
     Publications savePublication(Publications publication);
     Publications getPublication(Long id);
-
 }

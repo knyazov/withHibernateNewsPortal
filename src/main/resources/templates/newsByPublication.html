@@ -1,16 +1,13 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/layout/main.html">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layout/main.html">
 <div layout:fragment="productsContent">
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col" th:each="news : ${getNewsByPub}">
-            <div class="card">
-                <img th:src="${news.picture_url}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title" th:text="${news.title}"></h5>
-                    <p class="card-text" th:text="${news.short_content}"></p>
-                </div>
-            </div>
+    <div class="row mt-3">
+        <div class="col-6 mx-auto">
+            <h3 th:value="${getNewsByPub.title}">
+
+            </h3>
         </div>
     </div>
 </div>
