@@ -37,9 +37,6 @@ public class News {
     @Column(name = "language_id")
     private Long language_id;
 
-    @Column(name = "publication_id")
-    private Long publication_id;
-
     @ManyToOne(fetch = FetchType.EAGER)
     private Publications publications;
 

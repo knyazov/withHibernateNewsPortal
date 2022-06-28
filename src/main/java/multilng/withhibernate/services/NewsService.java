@@ -13,6 +13,7 @@ public interface NewsService {
     void deleteNews(Long id);
     News saveNews(News news);
     boolean isExist(Long id);
+    List<News> getNewsByPublicationId(Long id);
 
     List<Publications> getAllPublications();
     Publications addPublication(Publications publication);

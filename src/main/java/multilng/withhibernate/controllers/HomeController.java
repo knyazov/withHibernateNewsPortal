@@ -29,6 +29,14 @@ public class HomeController {
         return "index";
     }
 
+    @GetMapping(value = "/{id}")
+    private String newsByPublication(Model model,
+                                     @PathVariable Long id) {
+        model.addAttribute("allPublications", newsService.getAllPublications());
+        model.addAttribute("allNews", newsService.getNewsByPublicationId(id));
+        return "index";
+    }
+
     @GetMapping(value = "/addNews")
     private String addNewsGet(Model model) {
         List<Publications> publicationsList = newsService.getAllPublications();
@@ -60,6 +68,7 @@ public class HomeController {
     @GetMapping(value = "/details/{id}")
     private String publicationsPage(@PathVariable Long id,
                                     Model model){
+        model.addAttribute("allPublications", newsService.getAllPublications());
         model.addAttribute("getNewsByPub", newsService.getNewsById(id));
         return "newsByPublication";
     }

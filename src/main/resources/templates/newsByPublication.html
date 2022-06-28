@@ -2,12 +2,20 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="/layout/main.html">
-<div layout:fragment="productsContent">
+<div layout:fragment="productsContent" class="mb-2">
     <div class="row mt-3">
-        <div class="col-6 mx-auto">
-            <h3 th:value="${getNewsByPub.title}">
-
+        <div class="col-8 mx-auto">
+            <h3 th:text="${getNewsByPub.title}">
             </h3>
+            <h5 th:text="${getNewsByPub.short_content}">
+            </h5>
+            <h6 th:text="${getNewsByPub.post_date}"></h6>
+            <img th:src="${getNewsByPub.picture_url}" alt="">
+            <h6 th:text="${getNewsByPub.publications.name}"></h6>
+        </div>
+        <div class="col-8 mx-auto">
+            <div th:utext="${getNewsByPub.content}">
+            </div>
         </div>
     </div>
 </div>
